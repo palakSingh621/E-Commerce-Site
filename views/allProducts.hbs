@@ -1,5 +1,5 @@
 {{>navbar}}
-<div>
+<div class="d-flex flex-wrap gap-4 mt-4 justify-content-center">
 {{#each products}}
     <div class="card" style="width: 18rem;">
         <img src="{{this.img}}" class="card-img-top" alt="...">
@@ -7,7 +7,7 @@
             <h5 class="card-title">{{this.name}}</h5>
             <h5 class="card-title">{{this.price}}</h5>
             <p class="card-text">{{this.desc}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="/product/{{this._id}}" class="btn btn-primary"> Visit </a>
         </div>
     </div>
 {{/each}}
