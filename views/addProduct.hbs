@@ -1,0 +1,71 @@
+{{>navbar}}
+<div>
+    <h1>Add Product</h1>
+    <form methos="post" action="/addProduct">
+    <div>
+    <label for="name">name</label>
+    <input type="text" name="name" id="name" required><br>
+    <div class="valid-feedback">
+        Looks Good!
+    </div>
+    <div class="invalid-feedback">
+        Please choose a name!!
+    </div>
+    </div>
+
+    <div>
+    <label for="price">price</label>
+    <input type="Number" name="price" id="price" required><br>
+    <div class="valid-feedback">
+        Looks Good!
+    </div>
+    <div class="invalid-feedback">
+        Please choose a price!!
+    </div>
+    </div>
+
+    <div>
+    <label for="img">image:</label>
+    <input type="text" name="img" id="img" required><br>
+    <div class="valid-feedback">
+        Looks Good!
+    </div>
+    <div class="invalid-feedback">
+        Please choose a image!!
+    </div>
+    </div>
+
+    <div>
+    <label for="desc">desc</label>
+    <input type="text" name="desc" id="desc" required><br>
+    <div class="valid-feedback">
+        Looks Good!
+    </div>
+    <div class="invalid-feedback">
+        Please choose a description!!
+    </div>
+    </div>
+
+    <button>submit</button>
+    </form>
+    <script>
+        (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script>
+</div>

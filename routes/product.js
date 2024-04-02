@@ -13,4 +13,14 @@ router.get("/product/:id",async(req,res)=>{
     console.log(product)
     res.render("productPage",{product})
 })
+
+router.get("/addproduct",(req,res)=>{
+res.render("addProduct")
+})
+
+router.post("/addProduct",async(req,res)=>{
+    const {name,price,img,desc}=req.body
+    await Product.create({name, price, img, desc})
+    res.redirect("/products")
+})
 module.exports=router;
